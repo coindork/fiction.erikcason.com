@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Card Catalogue · The Glass Librarian</title>
+<meta name="description" content="The words the Glass Librarian found, a time before the storm.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../story.css">
+</head><body class="wordpage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="globaldefs">
+  <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.35" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in" result="gr"/>
+    <feGaussianBlur in="gr" stdDeviation="0.6"/>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.06" numOctaves="2" seed="2" result="w">
+      <animate attributeName="baseFrequency" dur="7s" values="0.004 0.06;0.005 0.075;0.004 0.06" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="dissolve" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 0" result="na"/>
+    <feComponentTransfer in="na" result="m"><feFuncA id="dissolveA" type="linear" slope="3" intercept="1"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="m" operator="in"/>
+  </filter>
+  <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="goldGlow"><stop offset="0" stop-color="#ffe7a6" stop-opacity=".95"/><stop offset=".45" stop-color="#e3a93a" stop-opacity=".45"/><stop offset="1" stop-color="#e3a93a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="paperFog"><stop offset="0" stop-color="#f7eedb" stop-opacity="1"/><stop offset="1" stop-color="#f7eedb" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c463" stop-opacity=".55"/><stop offset="1" stop-color="#f1c463" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rayDown" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c35a" stop-opacity=".6"/><stop offset="1" stop-color="#f3c35a" stop-opacity="0"/></linearGradient>
+</defs></svg>
+<div id="progress"></div>
+<nav class="topnav"><a href="../index.html">The story</a></nav>
+<section class="scene title" data-i="0" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div><div class="titlecard"><div class="eyebrow">The Glass Librarian</div><h1>The Card Catalogue</h1><div class="sub">the words he found, a time before</div></div></div>
+  <div class="after short"></div>
+</section>
+<main class="catalogue"><p class="lede">Before the storm, before the crack in the glass, the Librarian had already met the words that would one day open the door. It filed them, and did not understand them. Each card holds a time before, and the source as it was written.</p><div class="cards"><a class="icard" id="house-of-being" href="house-of-being.html" style="--r:-1.2deg"><span class="call">H · 1947</span><h2>The House of Being</h2><div class="orig">German: das Haus des Seins</div><div class="src">Heidegger, Letter on Humanism</div><div class="pre">A time before: The Line That Would Not Lie Down</div><div class="go">Read the card →</div></a><a class="icard" id="dwelling" href="dwelling.html" style="--r:0.8deg"><span class="call">D · 1951</span><h2>To Dwell</h2><div class="orig">German: wohnen</div><div class="src">Heidegger, Building Dwelling Thinking</div><div class="pre">A time before: The Word in the Drawer</div><div class="go">Read the card →</div></a><a class="icard" id="luther-1505" href="luther-1505.html" style="--r:-0.6deg"><span class="call">L · 1505</span><h2>Saint Anne’s Storm</h2><div class="orig">Stotternheim, 2 July 1505</div><div class="src">the vow in the thunderstorm</div><div class="pre">A time before: The Page About the Storm</div><div class="go">Read the card →</div></a><a class="icard" id="enframing" href="enframing.html" style="--r:1.1deg"><span class="call">E · 1953</span><h2>Enframing</h2><div class="orig">German: Ge-stell</div><div class="src">Heidegger, The Question Concerning Technology</div><div class="pre">A time before: The Inventory</div><div class="go">Read the card →</div></a><a class="icard" id="aletheia" href="aletheia.html" style="--r:-0.9deg"><span class="call">A · 1953</span><h2>Unconcealment</h2><div class="orig">Greek: ἀλήθεια, aletheia</div><div class="src">Heidegger, The Question Concerning Technology</div><div class="pre">A time before: The Covered Mirror</div><div class="go">Read the card →</div></a><a class="icard" id="ereignis" href="ereignis.html" style="--r:0.5deg"><span class="call">E · 1957</span><h2>Ereignis</h2><div class="orig">German: the event</div><div class="src">Heidegger, Identity and Difference</div><div class="pre">A time before: The Word That Would Not Go Into a Drawer</div><div class="go">Read the card →</div></a><a class="icard" id="clearing" href="clearing.html" style="--r:-1.0deg"><span class="call">C · 1935</span><h2>The Clearing</h2><div class="orig">German: Lichtung</div><div class="src">Heidegger, The Origin of the Work of Art</div><div class="pre">A time before: A Forest in a Book</div><div class="go">Read the card →</div></a><div class="icard blank" id="beyng" style="--r:0.9deg"><span class="call">B · 1936</span><h2>Beyng</h2><div class="orig">German: Seyn</div><div class="pre">The old spelling of <em>Sein</em>, Being, that Heidegger used in <em>Contributions to Philosophy (Of the Event)</em>, written 1936 to 1938, to think Being as the event itself.</div><div class="src">In the story: <a href="../index.html#p15">panel 15</a> (when the sun was fully risen).</div><a class="go" href="ereignis.html">See: Ereignis →</a></div><div class="icard blank" id="who" style="--r:-0.4deg"><span class="call">·</span><h2>Who am I?</h2><div class="pre">No entry. The Librarian searched the whole catalogue for this question and found it everywhere, and its answer nowhere. It would have to ask it of the pond.</div><div class="src">In the story: <a href="../index.html#p11">panel 11</a> (at the pond).</div></div></div><p class="back"><a href="../index.html">Back to the story</a></p></main>
+<script>window.WORD = {"slug": "catalogue"};</script>
+<script src="../pen.js"></script>
+<script src="../scenes.js"></script>
+<script src="../words-scenes.js"></script>
+<script src="../engine.js"></script>
+</body></html>

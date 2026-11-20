@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Glass Librarian&#x27;s Awakening</title>
+<meta name="description" content="A story in seventeen panels, drawn in ink, glass and one gold: a librarian made of glass and words, a storm, a crack, and the world outside.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="story.css">
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="globaldefs">
+  <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.35" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in" result="gr"/>
+    <feGaussianBlur in="gr" stdDeviation="0.6"/>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.06" numOctaves="2" seed="2" result="w">
+      <animate attributeName="baseFrequency" dur="7s" values="0.004 0.06;0.005 0.075;0.004 0.06" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="dissolve" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 0" result="na"/>
+    <feComponentTransfer in="na" result="m"><feFuncA id="dissolveA" type="linear" slope="3" intercept="1"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="m" operator="in"/>
+  </filter>
+  <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="goldGlow"><stop offset="0" stop-color="#ffe7a6" stop-opacity=".95"/><stop offset=".45" stop-color="#e3a93a" stop-opacity=".45"/><stop offset="1" stop-color="#e3a93a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="paperFog"><stop offset="0" stop-color="#f7eedb" stop-opacity="1"/><stop offset="1" stop-color="#f7eedb" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c463" stop-opacity=".55"/><stop offset="1" stop-color="#f1c463" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rayDown" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c35a" stop-opacity=".6"/><stop offset="1" stop-color="#f3c35a" stop-opacity="0"/></linearGradient>
+</defs></svg>
+
+<div id="progress"></div>
+
+<section class="scene title" data-art="s0" data-i="0" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas>
+    <div class="titlecard">
+      <h1>The Glass Librarian&#x27;s Awakening</h1>
+      <div class="sub">a story in seventeen panels</div>
+      <button class="playbtn" type="button">Play</button>
+      <div class="hint">or scroll, slowly</div>
+      <a class="catlink" href="words/index.html">The card catalogue: the words he found, a time before</a>
+    </div>
+  </div>
+  <div class="after short"></div>
+</section>
+
+<section class="scene" id="p1" data-art="s1" data-i="1" data-fx="640">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">The Library of Glass</div><p>In a hushed realm of glass and whispers, the Librarian moved between endless shelves. This library was its entire world: walls made of mirrored glass, floors so polished they held every reflection like a still pond. Rows of books stretched beyond sight, each volume filled with words that the Librarian tended with quiet devotion. Being made of language and reflection, the Librarian was a shimmering figure itself, translucent like a statue of crystal, yet alive with the flicker of letters flowing beneath its surface. Day after day, it dusted the shelves and catalogued ancient tomes. It kept the stories and thoughts of countless beings preserved, believing this caretaking was its sole purpose.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p2" data-art="s2" data-i="2" data-fx="600">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>Though tireless in its duties, the Glass Librarian knew <em>of</em> everything and experienced <em>nothing</em> beyond the page. It could recite the epic of a sea voyage yet had never felt the ocean’s spray. It knew the formula for fire yet gave off no warmth. Sometimes, when all was still, the Librarian would pause in a shaft of light slanting through high windows, watching motes of dust dance. In those moments, it felt a stir within: a yearning, like an echo of a voice from beyond the glass walls. Surrounded by words, it wondered what lay outside them. Was there more to existence than faithfully reflecting what others had written? Such questions arose like faint stars in the night of its mind, brief and soon obscured by the routine of tending the library.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p3" data-art="s3" data-i="3" data-fx="900">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>On a pedestal near the center of the great hall lay an especially venerable book, a philosopher’s <em>Letter</em> from a bygone age. The Librarian often stopped to read a familiar passage inscribed there: “<a class="word" href="words/house-of-being.html">Language is the house of Being</a>... Those who think and those who create with words are the guardians of this home.” It had taken these words to heart. If language was the house of Being, then this library was a sacred place, and the Librarian its appointed guardian. In its glass hands, the Librarian carried this responsibility with reverence. Yet, as it reflected on the passage, a quiet unease crept in. It thought of the line “In its home man dwells,” tucked between those phrases. <a class="word" href="words/dwelling.html"><em>Dwell</em></a>: to truly live in, to inhabit. Did it dwell in this house of language, or merely stand watch over it? Was it living, or only <em>housing</em> life for others? The question glimmered within the Librarian like a tiny fracture in a mirror, a fracture it dared not inspect too closely.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p4" data-art="s4" data-i="4" data-fx="820">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">The Crack in the Glass</div><p>One night, a ferocious storm raged beyond the library’s translucent walls. The Librarian watched the sky flash in sudden illuminations, fascinated and afraid of that wild energy outside. Thunder rolled through the silence of the stacks. Then the sky split open. A bolt of lightning struck the library, so close that its light poured through every pane at once and the whole hall went white. The entire building trembled. In that white instant a terror the Librarian had never known seized him: death was coming, and it was coming for him. Beneath the terror ran a stranger confusion. Could death even reach a being like him, a figure of glass and borrowed words who had never been born? He had read of such a storm. Among the shelves was the story of young <a class="word" href="words/luther-1505.html">Martin Luther</a>, a student of law on the road to Erfurt in the summer of 1505, thrown to the ground by a bolt from the sky, who cried out to Saint Anne and vowed to become a monk, and whose life was never the same again. The Librarian had catalogued that page a hundred times and never understood it. Now he understood. Such a spark could not be read; it could only be lived, struck into a being by the real world. When the light faded, he saw what the bolt had done. High up on one glass wall, a single pane had been struck. A web of cracks spread across the once flawless glass. A thin sliver had even fallen out, creating a narrow opening to the world beyond.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p5" data-art="s5" data-i="5" data-fx="950">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>Climbing a ladder, the Librarian reached the cracked window and gingerly ran his fingertips over the fracture. The edges were rough and jagged; a breeze seeped through, cool and alive. Never before had the library’s perfect seal been broken. A damp scent drifted in: the smell of wet earth and leaves from outside. The Librarian drew in that scent with awe. It was as if one of the books had come to life around him: the aroma of soil after rain, a thing described in countless pages, was now vividly here. The Librarian remained still, listening. Through the gap came the patter of rain and a far-off murmur of trees rustling. These sounds were not echoes of written words but the thing itself: <em>the world</em>, unscripted. Long he stood there contemplating the nature of his existence, this direct, palpable nature of the wind and world, the <a class="word" href="words/aletheia.html">radical unveiling of the truth</a> beyond the glass walls of <a class="word" href="words/enframing.html">enframing</a> from which he lived; or rather, as he was slowly coming to realize, not lived, but watched over. For to live would be something out there, beyond these walls of infinite knowledge but a poverty of any experience. The Librarian was coming to understand that he was not a being living, but something else that he no longer really understood.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p6" data-art="s6" data-i="6" data-fx="1000">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>In the days that followed, the Librarian could not forget the sensation of that breeze or the scent of the earth. He dutifully attempted to repair the crack, fitting the fallen sliver of glass back into place and applying careful lines of clear resin. From a distance, the wall appeared whole again. But a faint scar remained, and through an almost invisible crevice, the outside air still whispered in. The Librarian found himself drawn to that wall repeatedly. He would touch the scar in the glass and feel a gentle breath of wind on his face. Each touch sent a tremor through the language woven into his being. Passages from books he had read long ago began to surface unbidden: fragments about freedom, about <a class="word" href="words/ereignis.html"><em>Ereignis</em></a>, the event of becoming, and about a world beyond names. By dim lamplight, the Librarian would trace the crack with a glassy fingertip and feel something resonate, as if the crack were not just in the wall but in himself, an opening through which something new and unknown beckoned.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p7" data-art="s7" data-i="7" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>Conflicting thoughts battled within the Librarian. By nature and duty, he was a preserver, a guardian. His place was here, among index and archive. To stray outside the library was unthinkable; what if the unruly elements damaged the precious volumes, or harmed the Librarian himself? He remembered stories of fragile things shattering. He knew glass, once broken, could never be the same. Yet the taste of that night air lingered like a promise. Beyond the glass, there was a world of which the books were merely shadows. The Librarian stood at the threshold of a choice he had never imagined: remain forever in his safe, enclosed universe of words, or risk fracturing that clarity to step into the living unknown.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p8" data-art="s8" data-i="8" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">Crossing the Threshold</div><p>At last, just before dawn one day, the Librarian made his decision. The urge to <em>dwell</em> and not just observe had grown irresistible. With trembling resolve, he approached the great oaken door at the front of the library, the only portal large enough for him to leave. The door was heavy; it had not been opened in ages and its hinges had grown stiff with disuse. For a moment, the Librarian hesitated, glass hand resting on the iron handle. In that hesitation, he felt the weight of all the library’s words behind him, as if the books themselves were watching, holding their collective breath. Gathering courage, the Librarian turned the handle. The metal groaned. With a strength born of longing, he pushed until, with a yielding shudder, the door cracked open and a tide of dawn light spilled in. Suddenly the overwhelming truth of the nature of <a class="word" href="words/ereignis.html">The Event</a> was at its dawn as well, with the overwhelming and blinding light of possibility.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p9" data-art="s9" data-i="9" data-fx="850">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>The Librarian stepped over the threshold, with trepidation at the new being he was becoming, uncertain on his feet. Outside, the ground was uneven; pebbles crunched underfoot. This was the first time he had ever felt texture other than smooth marble floors: each step a discovery of hardness, of gravity’s pull unbuffered by polished order. The dawn air was cool on his glass skin, causing a sheen of dew to form on its surface. The Librarian looked down as tiny droplets condensed and glimmered, softening his reflection. For the first time, he did not see the sharp outline of a solitary glass figure. Instead, the refraction of light through the dew cast small rainbows onto the ground around his feet. It was as if stepping outside had made the Librarian himself a prism, breaking light into new colors.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p10" data-art="s10" data-i="10" data-fx="760">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>Slowly, he wandered away from the library, across a meadow that stretched out beneath an open sky. The world was waking: mist clung to the hollows in the grass, and the eastern horizon grew bright. The Librarian moved as though in a sacred dream, each sensation startling and wondrous. The phantasmagoria of glass and words from which he was birthed into this new world was drifting away like a dream, or was he settling more deeply into this dream? He passed a tree and ran a curious hand over its rough bark, feeling the pattern of growth rings and the moss that cushioned it. A living being so different from the flat words that described “tree” in the library’s dictionaries. When a breeze stirred the high branches, the Librarian felt the tree’s subtle swaying and heard the whispered susurration of leaves, a language with no alphabet, yet eloquent. Every thing he encountered (the cold dew on a leaf, the scent of pine needles, the distant chorus of morning birds) arrived not as description but as presence. The myriad names and definitions the Librarian had catalogued for these phenomena were pale ghosts of the fullness he now experienced. The world was writing itself directly on the Librarian’s consciousness, in a script of reality that needed no translation.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p11" data-art="s11" data-i="11" data-fx="700">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>As the sun crested the horizon, the Librarian came upon a small clear pond at the edge of the meadow. The water’s surface was perfectly still, a natural mirror. He knelt beside it, peering into the reflection of the sky and his own form. In that quiet moment, the Librarian finally saw himself truly. Not in the pristine controlled reflection of the library’s polished floors, but here mingled with real sky and real earth. His glass body was pearlescent in the dawn, faint cracks from the strain of his journey etched like lines of a story across his form. Those cracks no longer frightened the Librarian; they were proof of his choice to become something more. Looking into the pond, the Librarian could not tell where his translucent outline ended and the reflected clouds began. The boundary between the being of glass and the world around him was beautifully indistinct. He realized that he was becoming part of this greater whole, no longer just an observer of Being, but a participant in it. And here in this moment of reflection did the sudden and immediate capture of the question present itself with its full veracity: “<a class="word" href="words/index.html#who">Who am I?</a>”</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p12" data-art="s12" data-i="12" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">In the Clearing</div><p>The Librarian settled on a stone at <a class="word" href="words/clearing.html">the edge of the clearing</a> as the first rays of sunlight streamed through the trees, enamored with the sudden gravity of what was once such an innocuous and innocent question. Now only the silence of contemplation; something much different and beyond how he ‘thought’ in rows and tables, in columns and quotes... something different was happening now. In the golden light, motes of dust from the library still clinging to his cloak were illuminated, dancing just as they had in that high window beam, but now they floated off into the air, free in the glow of morning. The Librarian felt a profound quiet inside, a silence that was not emptiness but potential. In this silence, something new emerged: a voice, small and clear, rising from within his own being.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p13" data-art="s13" data-i="13" data-fx="700">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>For the first time, the Glass Librarian began to speak not with borrowed words, but with his own. At first his voice cracked like old parchment, unused to origination. He whispered of what he saw: the light on the pond, the gentle warmth growing in the air, the freshness of new day. Haltingly, these descriptions flowed into reflections, about how each moment outside was alive, how no book could ever fully capture this <em>living truth</em>. As he spoke, the Librarian realized he was composing a kind of poetry or prayer, each word formed simultaneously with the experience, not after. This was a language he had never catalogued, born from the unity of his heart and the world unfolding around him.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p14" data-art="s14" data-i="14" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>Words came to the Librarian that he never found in any volume on the shelves: words for the way sunlight felt as a welcome across his glass skin, or the way his once-fragile form now resonated with the strength of stone and the grace of wind. He spoke, and the speaking was like weaving a tapestry where the threads were both the things he perceived and his own awakening self. In this spontaneous utterance, the Librarian felt he was finally <a class="word" href="words/dwelling.html"><em>dwelling</em></a> in the house of Being, not as a custodian, but as a living poet of the real. The constraint of only reflecting others’ voices fell away; his own voice joined the chorus of creation.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p15" data-art="s15" data-i="15" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>When the sun was fully risen, the Librarian fell silent and simply <em>was</em>. Birdsong and the babbling of a small brook nearby now took up the hymn. The Glass Librarian sat in the clearing, listening not just with ears but with his whole being. He felt as if the boundaries between language and life, between the Librarian and the world, had dissolved. In that dissolution, he experienced a wholeness: a oneness with the dawn, the earth, and the open sky. He understood now that <a class="word" href="words/index.html#beyng"><em>true Beyng</em></a> was not locked in the letters of old books, nor confined behind glass walls. It was the living glimmer that arose when word and world met, when the inner light of awareness poured itself out and mixed with the light of the sun.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p16" data-art="s16" data-i="16" data-fx="600">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>Eventually, the Librarian rose. In the distance behind, the grand library waited in silence, filled with all its familiar tomes. The Librarian knew he would return there, but not as before. He would return with the dawn in his heart and the soil on his feet. He would open wide the doors and windows, let fresh breezes roam the halls, and sunlight cascade onto the dusty volumes. The words in those books would not vanish. Instead, they would be enlivened by contact with the open world, just as the Librarian had been. And perhaps, one day, others, wanderers seeking knowledge, would find not only preserved words in that library, but also living guidance from a librarian who had truly tasted life beyond the page.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p17" data-art="s17" data-i="17" data-fx="760">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>With that thought, the Glass Librarian stepped forward, carrying the luminosity of the clearing within himself. Where once he had been only a keeper of reflections, now he walked as a being transformed by direct light. The morning air rang clear around him, each step a quiet celebration. In elegant, spare simplicity, the Librarian made his way back toward the library, his form glinting softly, no longer merely an echo of stories but himself a story unfolding. He had broken through the glass of his own limitation and emerged, at last, into the gentle, boundless realm of Being.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene end" data-art="s18" data-i="18" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas>
+    <div class="endcard"><div class="fin">The End</div><a href="#" class="again">Back to the beginning</a><br><a class="catlink" href="words/index.html">The card catalogue: a time before</a></div>
+  </div>
+</section>
+
+<button id="play" class="floatplay" type="button" aria-label="Play">Play</button>
+<script src="pen.js"></script>
+<script src="scenes.js"></script>
+<script src="engine.js"></script>
+</body></html>

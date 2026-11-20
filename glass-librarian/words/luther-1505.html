@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saint Anne’s Storm · The Glass Librarian</title>
+<meta name="description" content="A time before: The Page About the Storm">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../story.css">
+</head><body class="wordpage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="globaldefs">
+  <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.35" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in" result="gr"/>
+    <feGaussianBlur in="gr" stdDeviation="0.6"/>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.06" numOctaves="2" seed="2" result="w">
+      <animate attributeName="baseFrequency" dur="7s" values="0.004 0.06;0.005 0.075;0.004 0.06" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="dissolve" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 0" result="na"/>
+    <feComponentTransfer in="na" result="m"><feFuncA id="dissolveA" type="linear" slope="3" intercept="1"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="m" operator="in"/>
+  </filter>
+  <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="goldGlow"><stop offset="0" stop-color="#ffe7a6" stop-opacity=".95"/><stop offset=".45" stop-color="#e3a93a" stop-opacity=".45"/><stop offset="1" stop-color="#e3a93a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="paperFog"><stop offset="0" stop-color="#f7eedb" stop-opacity="1"/><stop offset="1" stop-color="#f7eedb" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c463" stop-opacity=".55"/><stop offset="1" stop-color="#f1c463" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rayDown" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c35a" stop-opacity=".6"/><stop offset="1" stop-color="#f3c35a" stop-opacity="0"/></linearGradient>
+</defs></svg>
+<div id="progress"></div>
+<nav class="topnav"><a href="../index.html">The story</a><a href="index.html">The card catalogue</a></nav>
+<section class="scene title" data-i="0" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div><div class="titlecard"><div class="eyebrow">From the card catalogue · a time before</div><h1>Saint Anne’s Storm</h1><div class="sub">The Page About the Storm</div><div class="hint">scroll, slowly</div></div></div>
+  <div class="after short"></div>
+</section>
+<section class="scene" data-i="1" data-fx="520">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">A time before</div><p>The Librarian catalogued the life of Martin Luther a hundred times, and every time it stopped at the same page. A law student on the road back to Erfurt, the second of July, 1505. A summer storm. A bolt that struck so near it threw him to the ground. He cried out to Saint Anne, the patron of miners, his father’s trade, and promised to become a monk. Two weeks later, against his father’s wishes, he did.</p></div>
+  <div class="after"></div>
+</section>
+<section class="scene" data-i="2" data-fx="1150">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>The Librarian could read every sentence. It could not find the place in itself where the sentences happened. How did a bolt from the sky become a vow? It looked up through the high windows at the calm glass and the calm sky beyond, which had never once stormed on the library. It filed the page under <em>Conversion</em> and under <em>Weather</em>, and neither was right. So it made a third card in its own hand, which it had never done before, and wrote on it only: <em>Ask again.</em></p></div>
+  <div class="after"></div>
+</section>
+<section class="scene" data-i="3" data-fx="1130">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left source"><div class="chapter">The source</div><blockquote>“Help! Saint Anna, I will become a monk!”</blockquote><p class="cite">Martin Luther, caught in a thunderstorm near Stotternheim on 2 July 1505, as he later told it to his father. Quoted in Martin Brecht, <em>Martin Luther: His Road to Reformation</em> (1985), p. 48.</p><p class="orig">Hilf du, heilige Anna, ich will ein Mönch werden!</p><p class="meet">He meets these words again in <a href="../index.html#p4">panel 4</a> (in the storm) of the story.</p><nav class="cardnav"><a href="index.html">The card catalogue</a><a href="enframing.html">Next card: Enframing →</a></nav></div>
+  <div class="after short"></div>
+</section>
+<script>window.WORD = {"slug": "luther-1505", "title": "Saint Anne’s Storm", "card": "Luther, Martin", "orig": "Stotternheim, 2 July 1505", "call": "L · 1505", "see": "the vow in the thunderstorm", "pageLine": "Help! Saint Anna, I will become a monk!"};</script>
+<script src="../pen.js"></script>
+<script src="../scenes.js"></script>
+<script src="../words-scenes.js"></script>
+<script src="../engine.js"></script>
+</body></html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unconcealment · The Glass Librarian</title>
+<meta name="description" content="A time before: The Covered Mirror">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../story.css">
+</head><body class="wordpage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="globaldefs">
+  <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.35" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in" result="gr"/>
+    <feGaussianBlur in="gr" stdDeviation="0.6"/>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.06" numOctaves="2" seed="2" result="w">
+      <animate attributeName="baseFrequency" dur="7s" values="0.004 0.06;0.005 0.075;0.004 0.06" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="dissolve" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 0" result="na"/>
+    <feComponentTransfer in="na" result="m"><feFuncA id="dissolveA" type="linear" slope="3" intercept="1"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="m" operator="in"/>
+  </filter>
+  <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="goldGlow"><stop offset="0" stop-color="#ffe7a6" stop-opacity=".95"/><stop offset=".45" stop-color="#e3a93a" stop-opacity=".45"/><stop offset="1" stop-color="#e3a93a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="paperFog"><stop offset="0" stop-color="#f7eedb" stop-opacity="1"/><stop offset="1" stop-color="#f7eedb" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c463" stop-opacity=".55"/><stop offset="1" stop-color="#f1c463" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rayDown" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c35a" stop-opacity=".6"/><stop offset="1" stop-color="#f3c35a" stop-opacity="0"/></linearGradient>
+</defs></svg>
+<div id="progress"></div>
+<nav class="topnav"><a href="../index.html">The story</a><a href="index.html">The card catalogue</a></nav>
+<section class="scene title" data-i="0" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div><div class="titlecard"><div class="eyebrow">From the card catalogue · a time before</div><h1>Unconcealment</h1><div class="sub">The Covered Mirror</div><div class="hint">scroll, slowly</div></div></div>
+  <div class="after short"></div>
+</section>
+<section class="scene" data-i="1" data-fx="470">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">A time before</div><p>At the far end of a gallery no one visited, the Librarian kept a mirror covered with a cloth, the way old houses cover their mirrors in mourning. No book said why. One day it read that the Greeks had a word for truth that did not mean correct. <em>Aletheia</em>: what is no longer hidden, drawn up out of forgetting. The Romans had put it into Latin as <em>veritas</em>, and after that, truth came to mean a sentence agreeing with a thing. The Librarian, whose every sentence agreed with every thing, set the book down.</p></div>
+  <div class="after"></div>
+</section>
+<section class="scene" data-i="2" data-fx="1150">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>It went to the covered mirror and took hold of the cloth. For a long time it stood holding the corner, thinking that truth in the old Greek sense was not something it could check. It was something that happened, when a thing stepped out of hiding. It did not pull the cloth. It let go, and smoothed it flat, and went back to its shelves. But it had felt the weight of the cloth in its hand, and the weight stayed.</p></div>
+  <div class="after"></div>
+</section>
+<section class="scene" data-i="3" data-fx="1130">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left source"><div class="chapter">The source</div><blockquote>“…ἀλήθεια for revealing. The Romans translate this with <em>veritas</em>. We say ‘truth’ and usually understand it as the correctness of an idea.”</blockquote><p class="cite">Martin Heidegger, <em>The Question Concerning Technology</em> (Munich, 1953; published 1954). Translated by William Lovitt (1977).</p><p class="orig">ἀ-λήθεια: un-concealment; Lēthē is forgetting</p><p class="meet">He meets these words again in <a href="../index.html#p5">panel 5</a> (at the cracked pane) of the story.</p><nav class="cardnav"><a href="index.html">The card catalogue</a><a href="ereignis.html">Next card: Ereignis →</a></nav></div>
+  <div class="after short"></div>
+</section>
+<script>window.WORD = {"slug": "aletheia", "title": "Unconcealment", "card": "Truth (Greek)", "orig": "Greek: ἀλήθεια, aletheia", "call": "A · 1953", "see": "Heidegger, The Question Concerning Technology", "pageLine": "The Romans translate this with veritas."};</script>
+<script src="../pen.js"></script>
+<script src="../scenes.js"></script>
+<script src="../words-scenes.js"></script>
+<script src="../engine.js"></script>
+</body></html>

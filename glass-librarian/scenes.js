@@ -352,12 +352,8 @@
     crackWeb(b1, mx0 + 64, my0 + 76, 64, { rays: 6, w: 0.9, c: C.glass }).set(1);
     var b2 = A.beat(L1, 2), px = 800, ptop = 610;
     pedestal(b2, px, ptop, 975);
-    var bk = P.g(b2, { class: 'secret' }); book(bk, px, ptop - 6, 152);
+    var bk = P.g(b2); book(bk, px, ptop - 6, 152);
     txt(bk, px + 18, ptop - 12, 'Language is the house of Being.', { size: 12.5, rot: 3 });
-    var mark = txt(bk, px - 148, ptop + 30, '【11†L39-L43】', { size: 11, italic: false, op: 0, c: '#7a6f5c' });
-    mark.style.transition = 'opacity 1.6s';
-    bk.style.pointerEvents = 'auto';
-    bk.addEventListener('click', function () { mark.setAttribute('opacity', mark.getAttribute('opacity') === '0' ? '0.7' : '0'); });
     var b3 = A.beat(L2, 3);
     P.figure(b3, 'trace', { x: 1090, y: 975, s: 1.45, flip: true });
   };

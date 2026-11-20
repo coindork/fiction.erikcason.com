@@ -127,14 +127,76 @@
     requestAnimationFrame(frame);
   }
 
-  // ---- play: a slow continuous scroll at reading pace; any touch, wheel or key stops it ----
+  // ---- play ----
+  // With a reading (window.NARRATION, from narration/narration.js) Play reads the story aloud and the scroll follows the voice:
+  // while a paragraph is read, the spoken line stays near the middle of the screen; between paragraphs the scroll glides
+  // for N.hold seconds while the next drawing plays. Without one, Play is a slow continuous scroll at reading pace.
+  // Any touch, wheel or key pauses; Play again resumes from wherever the page is.
   var progress = document.getElementById('progress'), floatBtn = document.getElementById('play'), playing = false, pf = 0;
+  var N = window.NARRATION, sim = /#nsim/.test(location.hash), voice = null, simLog = [];
+  var SIM_RATE = 40;  // checking aid (#nsim): a silent clock 40 times faster than real time, results written into the page
+  var raf = sim ? function (f) { return setTimeout(function () { f(performance.now()); }, 16); } : requestAnimationFrame.bind(window);  // headless pages get no frames
+  var caf = sim ? clearTimeout : cancelAnimationFrame.bind(window);
+  function verseOf(k) { var s = document.getElementById('p' + k); return s && s.querySelector('.verse'); }
+  function band(k) {  // the scroll positions where paragraph k starts and finishes being read
+    var v = verseOf(k), vh = window.innerHeight, top = v.getBoundingClientRect().top + window.scrollY;
+    return [top - 0.58 * vh, top + v.offsetHeight - 0.42 * vh];
+  }
+  function makeVoice() {
+    if (!sim) { var a = new Audio(N.src); a.preload = 'auto'; return a; }
+    var f = { currentTime: 0, paused: true, ended: false, _t: performance.now(),
+      play: function () { f.paused = false; f._t = performance.now(); return Promise.resolve(); }, pause: function () { f.paused = true; } };
+    (function tick(t) { if (!f.paused) f.currentTime += (t - f._t) / 1000 * SIM_RATE; f._t = t; raf(tick); })(performance.now());
+    return f;
+  }
+  function narrate() {
+    voice = voice || makeVoice();
+    var K = N.paras.length, y0 = window.scrollY, k = 1, b;
+    while (k <= K && (b = band(k))[1] <= y0 + 1) k++;  // the first paragraph not yet finished
+    if (k > K) move(K + 1);
+    else if (y0 > b[0] + 1) read(k, (y0 - b[0]) / (b[1] - b[0]));  // mid-paragraph: pick up the voice at the same place
+    else move(k);
+  }
+  function move(k) {  // glide to where paragraph k starts (past the last one: to the end card)
+    var from = window.scrollY, t0 = performance.now(), dur = (N.hold || 4.5) * 1000 / (sim ? SIM_RATE : 1), K = N.paras.length;
+    (function step(t) {
+      if (!playing) return;
+      var to = k > K ? document.documentElement.scrollHeight - window.innerHeight : band(k)[0];
+      var u = Math.min(1, (t - t0) / dur), e = u < 0.5 ? 2 * u * u : 1 - Math.pow(2 - 2 * u, 2) / 2;
+      window.scrollTo(0, from + (to - from) * e);
+      if (u < 1) { pf = raf(step); return; }
+      if (sim) simLog.push({ move: k, ms: Math.round((t - t0) * SIM_RATE) });
+      if (k > K) { setPlay(false); if (sim) simDone(true); return; }
+      read(k, 0);
+    })(t0);
+  }
+  function read(k, f) {
+    var a = N.paras[k - 1][0], z = N.paras[k - 1][1], first = true;
+    voice.currentTime = a + f * (z - a);
+    var go = voice.play(); if (go && go.catch) go.catch(function () { setPlay(false); });
+    (function step() {
+      if (!playing) return;
+      var b = band(k), u = Pen.clamp((voice.currentTime - a) / (z - a), 0, 1);
+      window.scrollTo(0, b[0] + (b[1] - b[0]) * u);
+      if (sim && (first || u >= 1)) {  // where the spoken line sits on screen, as a share of the screen's height
+        var r = verseOf(k).getBoundingClientRect();
+        simLog.push({ para: k, at: +u.toFixed(2), line: +((r.top + u * r.height) / window.innerHeight).toFixed(3), voice: +voice.currentTime.toFixed(2) });
+        first = false; simDone(false);
+      }
+      if (u < 1 && !voice.ended) { pf = raf(step); return; }
+      voice.pause(); move(k + 1);
+    })();
+  }
+  function simDone(done) { var pre = document.getElementById('nsim-out') || document.body.appendChild(document.createElement('pre')); pre.id = 'nsim-out'; pre.textContent = JSON.stringify({ done: !!done, log: simLog }); }
   function setPlay(on) {
     playing = on;
     [].forEach.call(document.querySelectorAll('.playbtn, #play'), function (b) { b.textContent = on ? 'Pause' : 'Play'; });
-    if (on) { var t0 = performance.now(), y = window.scrollY; (function step(t) { if (!playing) return; var dt = Math.min(60, t - t0); t0 = t; y += dt * 0.042; window.scrollTo(0, y); if (y >= document.documentElement.scrollHeight - window.innerHeight - 2) { setPlay(false); return; } pf = requestAnimationFrame(step); })(t0); }
-    else cancelAnimationFrame(pf);
+    caf(pf);
+    if (!on) { if (voice) voice.pause(); return; }
+    if (N) { narrate(); return; }
+    var t0 = performance.now(), y = window.scrollY; (function step(t) { if (!playing) return; var dt = Math.min(60, t - t0); t0 = t; y += dt * 0.042; window.scrollTo(0, y); if (y >= document.documentElement.scrollHeight - window.innerHeight - 2) { setPlay(false); return; } pf = raf(step); })(t0);
   }
+  if (sim && N) setTimeout(function () { window.scrollTo(0, 0); setPlay(true); }, 300);
   [].forEach.call(document.querySelectorAll('.playbtn, #play'), function (b) { b.addEventListener('click', function (ev) { ev.stopPropagation(); setPlay(!playing); }); });
   ['wheel', 'touchstart', 'keydown'].forEach(function (n) { window.addEventListener(n, function () { if (playing) setPlay(false); }, { passive: true }); });
   var again = document.querySelector('.again');

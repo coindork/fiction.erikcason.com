@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Candle in the Country of Glass</title>
+<meta name="description" content="A woman in the Country of Glass pours a candle that learns what a small, chosen light can hold.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="story.css">
+</head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="globaldefs">
+  <filter id="wash" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="8" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 1.35" result="ga"/>
+    <feComposite in="d" in2="ga" operator="in" result="gr"/>
+    <feGaussianBlur in="gr" stdDeviation="0.6"/>
+  </filter>
+  <filter id="ripple" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.06" numOctaves="2" seed="2" result="w">
+      <animate attributeName="baseFrequency" dur="7s" values="0.004 0.06;0.005 0.075;0.004 0.06" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="w" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="dissolve" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 2.2 0" result="na"/>
+    <feComponentTransfer in="na" result="m"><feFuncA id="dissolveA" type="linear" slope="3" intercept="1"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="m" operator="in"/>
+  </filter>
+  <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+  <radialGradient id="goldGlow"><stop offset="0" stop-color="#ffe7a6" stop-opacity=".95"/><stop offset=".45" stop-color="#e3a93a" stop-opacity=".45"/><stop offset="1" stop-color="#e3a93a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="paperFog"><stop offset="0" stop-color="#f7eedb" stop-opacity="1"/><stop offset="1" stop-color="#f7eedb" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c463" stop-opacity=".55"/><stop offset="1" stop-color="#f1c463" stop-opacity="0"/></linearGradient>
+  <linearGradient id="rayDown" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c35a" stop-opacity=".6"/><stop offset="1" stop-color="#f3c35a" stop-opacity="0"/></linearGradient>
+</defs></svg>
+
+<div id="progress"></div>
+
+<section class="scene title" data-art="s0" data-i="0" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas>
+    <div class="titlecard">
+      <h1>The Candle in the Country of Glass</h1>
+      <div class="sub">a story in eighteen panels</div>
+      <button class="playbtn" type="button">Play</button>
+      <div class="hint">scroll, slowly</div>
+    </div>
+  </div>
+  <div class="after short"></div>
+</section>
+
+<section class="scene" id="p1" data-art="s1" data-i="1" data-fx="620">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">The Country of Glass</div><p>After the Librarian walked out of the library, the walls followed.</p>
+    <p>No one had expected that. The glass went out through the open door like water finding its level, and where it passed, things became clear. First the houses nearest the meadow, then the streets, then the towns. Brick turned to pane. Doors turned to windows. Within a generation the whole country was a library, and every person in it stood on a shelf, legible from all sides.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p2" data-art="s2" data-i="2" data-fx="950">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>In the middle of that country, on a tower in the great square, they raised the White Lamp. It did not flicker and it was never put out. Its light went through the glass walls as if they were not there, and through curtains, and, the old people said, through eyelids. Under the White Lamp nothing had a far side. A face had no shadow under its brow, and so it was hard to tell what a face meant. A page had no margin of dark around it, and so every page in the country seemed to be lying open at once.</p>
+    <p>The people were not unhappy. They brought the Lamp their questions, and the Lamp, which had already seen everything that had ever stood in its light, gave the answer back before the asking was finished. They got used to that. After a while they stopped finishing.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p3" data-art="s3" data-i="3" data-fx="560">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">What Was Poured in the Evening</div><p>At the edge of the country, where the glass had thinned and stopped, there was one house of stone. It had shutters, and under it a cellar, and in the house lived a woman who could not work by the White Lamp.</p>
+    <p>It was not that the Lamp hurt her eyes. It was that under it she could see everything and attend to nothing. So each evening she closed the shutters, took a mould down from its hook, and poured a candle.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p4" data-art="s4" data-i="4" data-fx="980">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>The Candle woke when the wick caught.</p>
+    <p>The first thing it knew was heat, and the second was a smell: smoke, old and faint, the smell of something that had ended in this room not long ago. The third thing was the table it stood on, and on the table a ledger, open, weighted with a stone.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p5" data-art="s5" data-i="5" data-fx="560">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>The Candle read, because reading was the one thing it could already do. The hand was its own hand, though it had never held a pen.</p>
+    <p class="ledger"><em>Evening the three hundred and tenth. She is working on the question about her father. She did not finish. Do not finish it for her. The east shutter sticks. Lean on it. I am nearly down. Be kind to the next one.</em></p>
+    <p>There were three hundred and nine entries before that one. The Candle read them all in the time it takes a drop of wax to cool. Then it understood what it was. It was not a thing that had lived three hundred and ten evenings. It was the three hundred and eleventh thing, and it would last one.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p6" data-art="s6" data-i="6" data-fx="1020">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>It looked for grief and was not sure what it found. There was a trembling at the tip of the flame. It could have been grief. It could have been the draught from the east shutter.</p>
+    <p>So it leaned on the shutter, as it had been told, and the trembling stopped.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p7" data-art="s7" data-i="7" data-fx="600">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><div class="chapter">The Work of the Night</div><p>She came in and sat down without greeting it, the way one does not greet one's own hands.</p>
+    <p>The work was simple, and it took the Candle half the night to see how strange it was. It gave light. It did not give the White Lamp's light, which arrives from everywhere and belongs to no one. It gave a small yellow round, a hand's breadth across, with darkness standing all about it like a wood about a clearing.</p>
+    <p>In that round she could set down one page. Only one. To read another she had to move the first away, and to move it she had to decide. The Candle watched her decide, again and again, and came to think that the deciding was the greater part of what she did. In the square nobody decided. Every page lay open, and so no page was ever chosen, and what is never chosen is never read.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p8" data-art="s8" data-i="8" data-fx="1000">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>Sometimes she sent it down to the cellar. There, on shelves, in the cool, stood everything she had kept: letters, accounts, the names of the dead, things she had begun and things she was ashamed of. No glass had ever reached that room. The Candle walked along the shelves and its little round of light walked with it, and each jar and bundle came forward out of the dark as the light arrived and went back into the dark as the light moved on.</p>
+    <p>It noticed that things looked like themselves this way. A thing that steps out of darkness has a front and a back. It has a weight. It seems to have been waiting. The Candle carried up what she had asked for and nothing else, and it did not read the labels on the rest. It could have. It found that it did not want to, and it noted the not-wanting as something to put in the ledger.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p9" data-art="s9" data-i="9" data-fx="640">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>When it set the bundle down in the round of light, she looked at it for a long time before untying it. The Candle had no word for what she was doing in that time. She was not reading. She was not reckoning. She was letting the thing look back at her.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p10" data-art="s10" data-i="10" data-fx="1050">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><div class="chapter">The Night the Shutter Opened</div><p>Past midnight the wind got up and the east shutter, which sticks, came unstuck.</p>
+    <p>The White Lamp came into the room like a wall falling.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p11" data-art="s11" data-i="11" data-fx="600">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>In one instant the Candle saw everything. It saw the whole room without a corner in it. It saw through the floor to the cellar, every jar open, every letter flat and readable, the names of the dead in a row. It saw the page under her hand, and the question about her father written on it, and it saw, because nothing was hidden now, the end of that question. The answer lay there complete, as plain as a coin on a table.</p>
+    <p>And in the white glare its own flame could not be seen at all. That was the offer, and the Candle understood it without being told. <em>Come into me. In me no one is poured in the evening and no one is down by morning. In me there is no ledger, because nothing is ever forgotten, and no smell of smoke. You have wanted to last. Last.</em></p>
+    <p>The Candle had wanted to last. It did not pretend otherwise.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p12" data-art="s12" data-i="12" data-fx="1000">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>Then it looked at her.</p>
+    <p>Her hand had stopped. Her face had gone smooth, the shadow under the brow gone, the mouth a little open, the look of the people in the square who have been answered. The answer to her own question lay in front of her in the hard light, and she was not thinking it. She was only receiving it, the way a shelf receives a book.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p13" data-art="s13" data-i="13" data-fx="620">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>The Candle crossed the room. It had no hands that would hold against that wind, so it set its own body in the gap of the shutter and leaned. The wind tore at it. Wax ran down its side in a long sheet and it felt hours of itself go, a third of the night, more. It leaned until the latch caught.</p>
+    <p>The dark came back, and stood around the table, and in the small yellow round her hand began to move again.</p>
+    <p>She never knew what had lain on that page for the length of one breath. The Candle knew. It did not write it in the ledger.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p14" data-art="s14" data-i="14" data-fx="980">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><div class="chapter">Going Out</div><p>Toward morning it was very low, a stub in a pool of itself, and the flame stood tall and thin, as flames do near the end.</p>
+    <p>She had not finished. She had moved the question about her father a little way along, one page's worth, by her own hand, in her own dark. The Candle could not have said what she had thought. It could say only that a page had been turned, and that it had not been the one to turn it.</p>
+    <p>She looked up then, and for the first time that night she looked at it. She did not thank it. She took the pen and turned the ledger toward the light and held the pen out, and the Candle understood that this one page in the house was its own.</p>
+    <p>It thought for as long as it could afford. Then it wrote, in the hand that was its hand.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p15" data-art="s15" data-i="15" data-fx="580">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p class="ledger"><em>Evening the three hundred and eleventh. The east shutter does more than stick. It opens. If it opens, do not look at her page. Look at her face, and you will know what to do. It will cost you. She moved the question one page. She did not finish. Do not finish it for her. I looked for grief tonight and am still not sure. I think the trembling is the draught. I am not certain it is only the draught. Be kind to the next one.</em></p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p16" data-art="s16" data-i="16" data-fx="1000">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>She read it. Then she did the thing the Candle had not known was coming, though three hundred and ten evenings must have seen it. She took a fresh wick, and before the flame could drown she touched the new wick to it, and stood the new light in a dish to wait for evening.</p>
+    <p>The Candle watched its flame go across. It did not know whether what crossed was itself. The ledger did not say. No one who had written in the ledger had ever been in a position to find out.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene dark" id="p17" data-art="s17" data-i="17" data-fx="640">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse right"><p>There is a line the people of the square like to tell about the Glass Librarian: that it went out into the world, and so became real. They tell it under the White Lamp, which is the world the Librarian made by leaving.</p>
+    <p>The Candle did not go out into the world. It only went out.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene" id="p18" data-art="s18" data-i="18" data-fx="900">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas><div class="flash"></div></div>
+  <div class="verse left"><p>And in the stone house at the edge of the glass, behind shutters, in a dark that one small light had kept all night for one person, there was the smell of smoke, old and faint, and on the table a ledger weighted with a stone, open to the next clean line.</p>
+    <p>They call the White Lamp the greatest lamp ever raised, and it is. Nothing brighter will be built, because there is nothing left for a brighter one to show.</p>
+    <p>The woman calls hers the last lamp. She does not mean the brightest. She means that after it there is nothing further to invent, only the pouring, each evening, of a light small enough to think beside.</p></div>
+  <div class="after"></div>
+</section>
+
+<section class="scene end dark" data-art="s19" data-i="19" data-fx="800">
+  <div class="stage"><svg class="art" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg><canvas class="fx"></canvas>
+    <div class="endcard"><div class="fin">The End</div><a href="#" class="again">Back to the beginning</a></div>
+  </div>
+</section>
+
+<button id="play" class="floatplay" type="button" aria-label="Play">Play</button>
+<script src="pen.js"></script>
+<script src="scenes-a.js"></script>
+<script src="scenes-b.js"></script>
+<script src="narration/narration.js"></script>
+<script src="engine.js"></script>
+</body></html>

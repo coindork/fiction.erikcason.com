@@ -1,0 +1,115 @@
+/* The Glass Librarian: ink on paper, glass, one gold accent */
+:root {
+  --paper: #f7eedb; --paper2: #efe3c8; --ink: #1e1c19; --ink2: #5a554c;
+  --night: #12110f; --nightink: #efe6d2; --gold: #d9a02a;
+  --serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --fell: "IM Fell English", "EB Garamond", Georgia, serif;
+  --fellsc: "IM Fell English SC", "IM Fell English", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+body { font: 20px/1.68 var(--serif); -webkit-font-smoothing: antialiased; }
+body::after { /* paper grain over everything */
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .11; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .28  0 0 0 0 .18  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.scene { position: relative; background: var(--paper); }
+.scene.dark { background: var(--night); color: var(--nightink); }
+.stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.stage svg.art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.stage canvas.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.flash { position: absolute; inset: 0; background: #fffdf3; opacity: 0; pointer-events: none; }
+.flash.on { animation: flash 1.5s ease-out 1; }
+@keyframes flash { 0% {opacity: 0} 4% {opacity: .97} 12% {opacity: .2} 18% {opacity: .9} 100% {opacity: 0} }
+
+.verse { position: relative; z-index: 3; width: min(31em, calc(100% - 32px)); margin: -34vh 0 0; padding: 30px 34px 32px;
+  background: rgba(247, 238, 219, .93); box-shadow: 0 0 0 1px rgba(30, 28, 25, .06), 0 18px 50px -24px rgba(30, 28, 25, .35); }
+.verse.left { margin-left: 5vw; }
+.verse.right { margin-left: auto; margin-right: 5vw; }
+.dark .verse { background: rgba(18, 17, 15, .88); color: var(--nightink); box-shadow: 0 0 0 1px rgba(239, 230, 210, .08); }
+.verse p { margin: 0; hyphens: auto; }
+.verse p:first-of-type::first-letter { font-family: var(--fell); font-size: 3.1em; float: left; line-height: .9; margin: .06em .1em 0 0; }
+.verse p + p { margin-top: .7em; }
+.verse p.ledger { font-family: var(--fell); font-style: italic; }
+.chapter { font-family: var(--fellsc); font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink2); margin-bottom: 14px; }
+.chapter::after { content: ""; display: block; width: 46px; height: 1px; background: var(--gold); margin-top: 10px; }
+.dark .chapter { color: #b9ae98; }
+.after { height: 62vh; }
+.after.short { height: 30vh; }
+em { font-style: italic; }
+
+.titlecard { position: absolute; left: 0; right: 0; top: 7vh; text-align: center; z-index: 3; padding: 0 16px; }
+.titlecard h1 { font: 400 clamp(27px, 5.4vw, 74px)/1.08 var(--fell); margin: 0; letter-spacing: .01em; }
+.titlecard .sub { font: italic 400 clamp(16px, 1.6vw, 21px) var(--fell); color: var(--ink2); margin-top: 10px; }
+.titlecard .hint { font: 13px var(--serif); letter-spacing: .18em; text-transform: uppercase; color: var(--ink2); margin-top: 12px; }
+.playbtn, .floatplay { font: 500 15px var(--serif); letter-spacing: .14em; text-transform: uppercase; padding: 9px 24px; border-radius: 999px;
+  border: 1px solid var(--ink); background: rgba(247, 238, 219, .8); color: var(--ink); cursor: pointer; margin-top: 22px; }
+.playbtn:hover, .floatplay:hover { background: var(--ink); color: var(--paper); }
+.floatplay { position: fixed; right: 18px; bottom: 18px; z-index: 60; margin: 0; font-size: 12px; padding: 7px 16px; opacity: 0; transition: opacity .4s; }
+.floatplay.show { opacity: .9; }
+#progress { position: fixed; left: 0; top: 0; height: 2px; width: 0; background: var(--gold); z-index: 60; }
+
+.endcard { position: absolute; left: 0; right: 0; bottom: 14vh; text-align: center; z-index: 3; }
+.fin { font: italic 400 clamp(28px, 3.6vw, 46px) var(--fell); }
+.again { display: inline-block; margin-top: 12px; font: 14px var(--serif); letter-spacing: .16em; text-transform: uppercase; color: var(--ink2); text-decoration: none; border-bottom: 1px solid var(--gold); }
+
+
+/* still mode: one scene, no scrolling, for checking a frame */
+html.still .scene { display: none; }
+html.still .scene.shown { display: block; }
+html.still .stage { position: relative; }
+html.still .verse, html.still .after { display: none; }
+html.still.withverse .verse { display: block; position: absolute; bottom: 6vh; margin: 0; }
+html.still.withverse .verse.left { left: 5vw; }
+html.still.withverse .verse.right { right: 5vw; }
+html.still .floatplay, html.still #progress { display: none; }
+html.still.clean .titlecard, html.still.clean .endcard, html.still.clean .topnav { display: none; }
+
+@media (max-width: 760px) {
+  body { font-size: 18px; }
+  .verse, .verse.left, .verse.right { margin: -30vh auto 0; padding: 22px 20px 24px; width: calc(100% - 32px); max-height: 70vh; overflow: auto; -webkit-overflow-scrolling: touch; }
+  .after { height: 50vh; }
+}
+@media (prefers-reduced-motion: reduce) { .flash.on { animation: none; } }
+
+/* ---- the card catalogue ---- */
+a.word { color: inherit; text-decoration: none; background-image: linear-gradient(var(--gold), var(--gold)); background-repeat: no-repeat; background-size: 100% 1.5px; background-position: 0 94%; transition: background-size .25s; }
+a.word:hover, a.word:focus-visible { background-image: linear-gradient(rgba(217, 160, 42, .3), rgba(217, 160, 42, .3)); background-size: 100% 46%; }
+.catlink { display: inline-block; margin-top: 14px; font: italic 17px var(--fell); color: var(--ink2); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.catlink:hover { color: var(--ink); }
+.titlecard .catlink { display: inline-block; }
+.topnav { position: fixed; top: 10px; left: 12px; z-index: 60; display: flex; gap: 8px; font: 12px var(--serif); letter-spacing: .16em; text-transform: uppercase; }
+.topnav a { color: var(--ink2); text-decoration: none; background: rgba(247, 238, 219, .86); padding: 5px 9px; box-shadow: 0 0 0 1px rgba(30, 28, 25, .08); }
+.topnav a:hover { color: var(--ink); }
+.eyebrow { font: 13px var(--fellsc); letter-spacing: .22em; text-transform: uppercase; color: var(--ink2); margin-bottom: 12px; }
+.verse.source blockquote { margin: 0 0 18px; font: italic 23px/1.48 var(--fell); }
+.verse.source p::first-letter { font: inherit; float: none; margin: 0; line-height: inherit; }
+.verse.source .cite { font-size: 16px; line-height: 1.55; color: var(--ink2); margin: 0; }
+.verse.source .orig { font: italic 17px var(--fell); margin: 10px 0 0; }
+.verse.source .meet { font-size: 16px; margin: 16px 0 0; }
+.verse.source .meet a, .cardnav a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.cardnav { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; font: 13px var(--serif); letter-spacing: .12em; text-transform: uppercase; }
+.catalogue { position: relative; z-index: 3; max-width: 1100px; margin: -14vh auto 0; padding: 0 16px 90px; }
+.catalogue .lede { max-width: 36em; margin: 0 auto 34px; padding: 22px 26px; background: rgba(247, 238, 219, .94); font: italic 19px/1.6 var(--fell); text-align: center; box-shadow: 0 0 0 1px rgba(30, 28, 25, .06); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 26px; }
+.icard { display: block; position: relative; color: var(--ink); text-decoration: none; padding: 18px 22px 34px; min-height: 230px;
+  background-color: #fffaf0; background-image: repeating-linear-gradient(to bottom, transparent 0 27px, rgba(53, 82, 95, .13) 27px 28px); background-position: 0 14px;
+  box-shadow: 0 0 0 1px rgba(30, 28, 25, .13), 0 16px 30px -20px rgba(30, 28, 25, .45); transform: rotate(var(--r, 0deg)); transition: transform .25s, box-shadow .25s; }
+a.icard:hover, a.icard:focus-visible { transform: rotate(0deg) translateY(-4px); box-shadow: 0 0 0 1px rgba(30, 28, 25, .18), 0 22px 36px -20px rgba(30, 28, 25, .5); }
+.icard::after { content: ""; position: absolute; left: 50%; bottom: 10px; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(30, 28, 25, .45); }
+.icard .call { position: absolute; top: 18px; right: 20px; font: 12px var(--serif); letter-spacing: .12em; color: var(--ink2); }
+.icard h2 { font: 400 29px/1.1 var(--fell); margin: 2px 0 12px; padding: 0 70px 12px 0; border-bottom: 1.5px solid var(--gold); }
+.icard .orig { font: italic 17px/1.6 var(--fell); }
+.icard .src { font-size: 15px; line-height: 1.75; color: var(--ink2); margin-top: 4px; }
+.icard .pre { font: italic 17px/1.65 var(--fell); margin-top: 6px; }
+.icard .go { display: inline-block; margin-top: 10px; font: 12px var(--serif); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.icard.blank .src a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--gold); }
+.catalogue .back { text-align: center; margin-top: 40px; }
+.catalogue .back a { color: var(--ink2); text-decoration: none; border-bottom: 1px solid var(--gold); font: 14px var(--serif); letter-spacing: .16em; text-transform: uppercase; }
+@media (max-width: 760px) {
+  .catalogue { margin-top: -10vh; }
+  .cards { grid-template-columns: 1fr; }
+  .verse.source blockquote { font-size: 20px; }
+  .topnav { top: 8px; left: 8px; }
+}
